@@ -12,7 +12,7 @@ Add following into your LocalSettings.php
 $wgSitename = "My Wiki";  
 $wgAllowDisplayTitle = true;  
 $wgRestrictDisplayTitle = false;  
-require_once('extensions/Add_HTML_Meta_and_Title.php');  
+require_once "$IP/extensions/Add_HTML_Meta_and_Title/Add_HTML_Meta_and_Title.php';
 ```
 
 Useful hint
@@ -31,4 +31,5 @@ Now you can use more Wiki-flavoured style like following.
 
 Changelog
 =========
-08.06.2012 - MediaWiki v1.19 support
+08.06.2012 - version 0.5   - MediaWiki v1.19 support
+17.05.2015 - version 0.5.2 - using new i18n system
