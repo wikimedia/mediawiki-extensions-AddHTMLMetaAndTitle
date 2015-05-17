@@ -10,6 +10,7 @@ if (defined('MEDIAWIKI')) {
 
 # Credits
 $wgExtensionCredits['parserhook'][] = array(
+	'path' => __FILE__,
     'name' => 'Add_HTML_Meta_and_Title',
     'author' => 'Vladimir Radulovski - vladradulov&lt;at&gt;gmail.com, based on the work of Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
     'url' => 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
@@ -21,25 +22,16 @@ $wgExtensionCredits['parserhook'][] = array(
 # Add Extension Function
 $wgExtensionFunctions[] = 'setupSEOParserHooks';
 
-
-
 /**
  * Sets up the MetaKeywordsTag Parser hook and system messages
  */
 function setupSEOParserHooks() {
 	global $wgParser, $wgMessageCache;
-# meta if empty
+	# meta if empty
 	$wgParser->setHook( 'seo', 'renderSEO' );
-	
-    #$wgMessageCache->addMessage(
-    #    'seo-empty-attr', 
-    #    'Error: &lt;seo&gt; tag must contain at least one non-empty &quot;title&quot; or &quot;metak(eywords)&quot; or &quot;metad(escription)&quot; attribute.'
-    #);
-
 }
 
-function paramEncode( $param_text, &$parser, $frame )
-{
+function paramEncode( $param_text, &$parser, $frame ){
   $expanded_param =$parser->recursiveTagParse( $param_text, $frame );
   return base64_encode( $expanded_param );
 }
@@ -51,13 +43,9 @@ function paramEncode( $param_text, &$parser, $frame )
  * @param Parser $parser Reference to currently running parser (passed by reference).
  * @return String Always empty.
  */
-#function renderSEO( $text, $params = array(), &$parser ) {
-#function renderSEO( $text, $params = array(), &$parser, $frame ) {
 function renderSEO( $text, $params = array(), $parser, $frame ) {
-
     # Short-circuit with error message if content is not specified.
 	$emt="";
-	
     if  ( (isset($params['title'])) 			||
 		  (isset($params['metak'])) 			||
 		  (isset($params['metad'])) 			||
@@ -65,17 +53,11 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
 		  (isset($params['metadescription']))
 		)
 	{
-		    if  (isset($params['title'])) 
-		          {
-		              $emt .= "<!-- ADDTITLE ". paramEncode( $params['title'], $parser, $frame )." -->";
-		          }
-			if  (isset($params['metak']))        {$emt .= "<!-- ADDMETAK ".base64_encode($params['metak'])." -->";}
-			if  (isset($params['metakeywords'])) 
-			  {
-			      $emt .= "<!-- ADDMETAK ". paramEncode( $params['metakeywords'], $parser, $frame ) ." -->";
-			  }
-			if  (isset($params['metad']))           {$emt .= "<!-- ADDMETAD ".base64_encode($params['metad'])." -->";}
-			if  (isset($params['metadescription'])) {$emt .= "<!-- ADDMETAD ".base64_encode($params['metadescription'])." -->";}
+		    if  (isset($params['title']))           {$emt .= "<!-- ADDTITLE ".paramEncode($params['title'], $parser, $frame)." -->";}
+			if  (isset($params['metak']))           {$emt .= "<!-- ADDMETAK ".paramEncode($params['metak'], $parser, $frame)." -->";}
+			if  (isset($params['metakeywords']))    {$emt .= "<!-- ADDMETAK ".paramEncode($params['metakeywords'], $parser, $frame)." -->";}
+			if  (isset($params['metad']))           {$emt .= "<!-- ADDMETAD ".paramEncode($params['metad'], $parser, $frame)." -->";}
+			if  (isset($params['metadescription'])) {$emt .= "<!-- ADDMETAD ".paramEncode($params['metadescription'], $parser, $frame)." -->";}
      
 			return $emt; //$encoded_metas_and_title;
 	 
@@ -88,7 +70,6 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
 	}
 
 }
-
 
 # Attach post-parser hook to extract metadata and alter headers
 $wgHooks['OutputPageBeforeHTML'][] = 'insertMeta';
@@ -104,49 +85,32 @@ $wgHooks['BeforePageDisplay'][] = 'insertTitle';
  * @return Boolean Always true to allow other extensions to continue processing.
  */
  
-
- function insertTitle ( $out ) {
- 
+function insertTitle($out){
      # Extract meta keywords
-// public function getHTML() { return $this->mBodytext; }
-	 
-    if (preg_match_all(
+	if (preg_match_all(
         '/<!-- ADDTITLE ([0-9a-zA-Z\\+\\/]+=*) -->/m', 
         $out->mBodytext, 
         $matches)===false
     ) return true;
     $data = $matches[1];
-//    print_r ($data) ;
     # Merge keyword data into OutputPage as meta tags
     foreach ($data as $item) {
         $content = @base64_decode($item);
-	$content = htmlspecialchars($content, ENT_QUOTES);
+		$content = htmlspecialchars($content, ENT_QUOTES);		
+        if ($content){
+			$new_title = $out->mHTMLtitle;
 		
-        if ($content) {
-//		print "DA $content\n";
-		$new_title = $out->mHTMLtitle;
-		#$new_title .= ", $content";
-		
-		//Set page title
-		global $wgSitename;
-		$new_title = "$content - $wgSitename";
-		$out->mHTMLtitleFromPagetitle = true;
-		
-		$out->setHTMLTitle( $new_title );
+			//Set page title
+			global $wgSitename;
+			$new_title = "$content - $wgSitename";
+			$out->mHTMLtitleFromPagetitle = true;
+			$out->setHTMLTitle( $new_title );
 		}
-		else {
-//		print "TZ\n";
-		}
-		
     }
-
-
 	return true;
-
 }
 
-function insertMeta( $out, $text ) {
-
+function insertMeta($out, $text){
     # Extract meta keywords
     if (preg_match_all(
         '/<!-- ADDMETAK ([0-9a-zA-Z\\+\\/]+=*) -->/m', 
@@ -158,16 +122,15 @@ function insertMeta( $out, $text ) {
     # Merge keyword data into OutputPage as meta tags
     foreach ($data AS $item) {
         $content = @base64_decode($item);
-	$content = htmlspecialchars($content, ENT_QUOTES);
+		$content = htmlspecialchars($content, ENT_QUOTES);
 		
         if ($content) {
-		$out->addMeta( 'keywords', $content );
+			$out->addMeta( 'keywords', $content );
 		}
 		
     }
-// Now for desc
 
-    # Extract meta keywords
+    # Extract meta description
     if (preg_match_all(
         '/<!-- ADDMETAD ([0-9a-zA-Z\\+\\/]+=*) -->/m', 
         $text, 
@@ -178,17 +141,12 @@ function insertMeta( $out, $text ) {
     # Merge keyword data into OutputPage as meta tags
     foreach ($data AS $item) {
         $content = @base64_decode($item);
-	$content = htmlspecialchars($content, ENT_QUOTES);
-#preg_replace($pattern, $replacement, $string);
+		$content = htmlspecialchars($content, ENT_QUOTES);
 
         if ($content) {
 		$out->addMeta( 'description', $content );
 		}
-		
     }
-	
-	
-	
     return true;
 }
 
