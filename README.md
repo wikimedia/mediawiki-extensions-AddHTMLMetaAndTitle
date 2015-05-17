@@ -1,9 +1,9 @@
 MW-MetaTitle
 ============
 
-An unofficial fork of [Add HTML Meta and Title](http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title) extension for MediaWiki.
+An fork of [Add HTML Meta and Title](http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title) extension for MediaWiki.
 
-Usage
+Instalation
 =====
 Copy Add_HTML_Meta_and_Title.php into 'extensions' directory.
 Add following into your LocalSettings.php
@@ -14,6 +14,26 @@ $wgAllowDisplayTitle = true;
 $wgRestrictDisplayTitle = false;  
 require_once "$IP/extensions/Add_HTML_Meta_and_Title/Add_HTML_Meta_and_Title.php';
 ```
+
+Usage
+=====
+<seo title="word1,word2" metakeywords="word3,word4" metadescription="word5,word6" google-site-verification="123456789-abfd123456" />
+
+...or the shorter...
+
+<seo title="word1,word2" metak="word3,word4" metad="word5,word6" google-site-verification="123456789-abfd123456" />
+
+...these words are added to the HTML title and meta headers. This makes SEO (search engine optimization) with MediaWiki easier.
+
+For example, the above would become:
+
+<title>Original title, word1,word2</title>         (the string ", word1,word2,..." is added)
+<meta name="keywords" content="word3,word4" />
+<meta name="description" content="word5,word6" />
+<meta name="google-site-verification" content="123456789-abfd1234562 />
+
+(These are new meta tags - existing meta tags are left untouched.)
+
 
 Useful hint
 ===========
@@ -33,3 +53,4 @@ Changelog
 =========
 08.06.2012 - version 0.5   - MediaWiki v1.19 support
 17.05.2015 - version 0.5.2 - using new i18n system
+17.05.2015 - version 0.6   - add support for google-site-verification

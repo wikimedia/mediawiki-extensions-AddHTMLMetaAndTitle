@@ -17,7 +17,7 @@ $wgExtensionCredits['parserhook'][] = array(
 						'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'),
     'url'			=> 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
     'description'	=> htmlentities ('Add_HTML_Meta_and_Title-desc'),
-    'version'		=> '0.5.2',
+    'version'		=> '0.6',
 	'license-name'	=> 'MIT'
 );
 
@@ -49,11 +49,12 @@ function paramEncode( $param_text, &$parser, $frame ){
 function renderSEO( $text, $params = array(), $parser, $frame ) {
     # Short-circuit with error message if content is not specified.
 	$emt="";
-    if  ( (isset($params['title'])) 			||
-		  (isset($params['metak'])) 			||
-		  (isset($params['metad'])) 			||
-		  (isset($params['metakeywords'])) 		||
-		  (isset($params['metadescription']))
+    if  ( (isset($params['title'])) 					||
+		  (isset($params['metak'])) 					||
+		  (isset($params['metad'])) 					||
+		  (isset($params['metakeywords'])) 				||
+		  (isset($params['metadescription']))			||
+		  (isset($params['google-site-verification']))	||
 		)
 	{
 		    if  (isset($params['title']))           {$emt .= "<!-- ADDTITLE ".paramEncode($params['title'], $parser, $frame)." -->";}
@@ -61,6 +62,7 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
 			if  (isset($params['metakeywords']))    {$emt .= "<!-- ADDMETAK ".paramEncode($params['metakeywords'], $parser, $frame)." -->";}
 			if  (isset($params['metad']))           {$emt .= "<!-- ADDMETAD ".paramEncode($params['metad'], $parser, $frame)." -->";}
 			if  (isset($params['metadescription'])) {$emt .= "<!-- ADDMETAD ".paramEncode($params['metadescription'], $parser, $frame)." -->";}
+			if  (isset($params['google-site-verification'])) {$emt .= "<!-- ADDMETAGOOGLESITEVERIFICATION ".paramEncode($params['google-site-verification'], $parser, $frame)." -->";}
      
 			return $emt; //$encoded_metas_and_title;
 	 
@@ -120,8 +122,7 @@ function insertMeta($out, $text){
         $text, 
         $matches)===false
     ) return true;
-    $data = $matches[1];
-    
+    $data = $matches[1];    
     # Merge keyword data into OutputPage as meta tags
     foreach ($data AS $item) {
         $content = @base64_decode($item);
@@ -140,14 +141,31 @@ function insertMeta($out, $text){
         $matches)===false
     ) return true;
     $data = $matches[1];
+    # Merge description data into OutputPage as meta tags
+    foreach ($data AS $item) {
+        $content = @base64_decode($item);
+		$content = htmlspecialchars($content, ENT_QUOTES);
+		
+        if ($content) {
+			$out->addMeta( 'keywords', $content );
+		}
+		
+    }
+    # Extract google-site-verification
+    if (preg_match_all(
+        '/<!-- ADDMETAGOOGLESITEVERIFICATION ([0-9a-zA-Z\\+\\/]+=*) -->/m', 
+        $text, 
+        $matches)===false
+    ) return true;
+    $data = $matches[1];
     
-    # Merge keyword data into OutputPage as meta tags
+    # Merge google-site-verification data into OutputPage as meta tags
     foreach ($data AS $item) {
         $content = @base64_decode($item);
 		$content = htmlspecialchars($content, ENT_QUOTES);
 
         if ($content) {
-		$out->addMeta( 'description', $content );
+		$out->addMeta( 'google-site-verification', $content );
 		}
     }
     return true;
