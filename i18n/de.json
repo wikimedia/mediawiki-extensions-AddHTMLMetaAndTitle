@@ -4,8 +4,6 @@
 			"Dennis Roczek"
 		]
 	},
-	"Add_HTML_Meta_and_Title-desc": "Durch den Tag <seo title="word1,word2,..." metakeywords="word1,word2,..." metadescription="word1,word2,..." google-site-verification="googlekey" />, können die HTML Meta keywords und HTML Meta description Tags von der Wiki Seite bearbeiten. Es existieren auch Kurzformen: <seo title="1 , 2" metak="m1 m2,m3" metad="word1, word2" /> .",
-	"seo-empty-attr": "Fehler: &lt;seo&gt; Tag muss wenigstens einen nicht leeres Attribut &quot;title&quot; oder &quot;metak(eywords)&quot; oder &quot;metad(escription)&quot; enthalten."
+	"addhtmlmetaandtitle-desc": "Durch den Tag &lt;seo title=\"word1,word2,...\" metakeywords=\"word1,word2,...\" metadescription=\"word1,word2,...\" google-site-verification=\"googlekey\" \/&gt;, koennen Sie die HTML Meta keywords und HTML Meta description Tags von der Wiki Seite bearbeiten. Es existieren auch Kurzformen: &lt;seo title=\"word1, word2,...\" metak=\"word1, word2,...\" metad=\"word1, word2,...\"  \/&gt;",
+	"addhtmlmetaandtitle-empty-attr": "Fehler: &lt;seo&gt; Tag muss wenigstens ein nicht leeres Attribut \"title\"  oder \"metak(eywords)\" oder \"metad(escription)\" enthalten."
 }
-
-

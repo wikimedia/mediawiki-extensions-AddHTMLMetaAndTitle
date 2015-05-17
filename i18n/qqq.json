@@ -4,8 +4,8 @@
 			"Dennis Roczek"
 		]
 	},
-	"Add_HTML_Meta_and_Title-desc": "[[Special:Version]] description",
-	"seo-empty-attr": "Error description if empty tag is set in the page code."
+	"addhtmlmetaandtitle-desc": "[[Special:Version]] description",
+	"addhtmlmetaandtitle-attr": "Error description if empty tag is set in the page code."
 }
 
 

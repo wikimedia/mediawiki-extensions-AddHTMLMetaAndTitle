@@ -1,6 +1,5 @@
 <?php
 /*
-*
 * Extension homepage is at  http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title
 *
  */
@@ -16,7 +15,7 @@ $wgExtensionCredits['parserhook'][] = array(
 						'Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
 						'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'),
     'url'			=> 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
-    'description'	=> htmlentities ('Add_HTML_Meta_and_Title-desc'),
+    'descriptionmsg'	=> 'addhtmlmetaandtitle-desc',
     'version'		=> '0.6',
 	'license-name'	=> 'MIT'
 );
@@ -54,7 +53,7 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
 		  (isset($params['metad'])) 					||
 		  (isset($params['metakeywords'])) 				||
 		  (isset($params['metadescription']))			||
-		  (isset($params['google-site-verification']))	||
+		  (isset($params['google-site-verification']))
 		)
 	{
 		    if  (isset($params['title']))           {$emt .= "<!-- ADDTITLE ".paramEncode($params['title'], $parser, $frame)." -->";}
@@ -70,7 +69,8 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
     else
 	{return
             '<div class="errorbox">'.
-            wfMsgForContent('seo-empty-attr').
+            #TODO update me: http://www.mediawiki.org/wiki/Manual:Messages_API#Deprecated_wfMsg.2A_functions
+            wfMsgForContent('addhtmlmetaandtitle-empty-attr').
             '</div>';
 	}
 
@@ -78,9 +78,7 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
 
 # Attach post-parser hook to extract metadata and alter headers
 $wgHooks['OutputPageBeforeHTML'][] = 'insertMeta';
-#$wgHooks['BeforePageDisplay'][] = 'insertMeta';
 $wgHooks['BeforePageDisplay'][] = 'insertTitle';
-#$wgHooks['OutputPageBeforeHTML'][] = 'insertTitle';
 
 /**
  * Adds the <meta> keywords to document head.
@@ -147,7 +145,7 @@ function insertMeta($out, $text){
 		$content = htmlspecialchars($content, ENT_QUOTES);
 		
         if ($content) {
-			$out->addMeta( 'keywords', $content );
+			$out->addMeta( 'description', $content );
 		}
 		
     }
