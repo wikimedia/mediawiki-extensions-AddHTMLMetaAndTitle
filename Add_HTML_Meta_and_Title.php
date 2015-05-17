@@ -2,10 +2,19 @@
 /*
 * Extension homepage is at  http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title
 *
+ */   
+
+/** 
+ * Protect against register_globals vulnerabilities. 
+ * This line must be present before any global variable is referenced. 
  */
- 
-# Confirm MW environment
-if (defined('MEDIAWIKI')) {
+if (!defined('MEDIAWIKI')) {
+   echo <<<EOT
+To install my extension, put the following line in LocalSettings.php:
+require_once "\$IP/extensions/Add_HTML_Meta_and_Title/Add_HTML_Meta_and_Title.php" ); 
+EOT;
+   exit( 1 );
+}
 
 # Credits
 $wgExtensionCredits['parserhook'][] = array(
@@ -69,8 +78,7 @@ function renderSEO( $text, $params = array(), $parser, $frame ) {
     else
 	{return
             '<div class="errorbox">'.
-            #TODO update me: http://www.mediawiki.org/wiki/Manual:Messages_API#Deprecated_wfMsg.2A_functions
-            wfMsgForContent('addhtmlmetaandtitle-empty-attr').
+            wfMessage('addhtmlmetaandtitle-empty-attr')->inContentLanguage()->text().
             '</div>';
 	}
 
@@ -87,7 +95,6 @@ $wgHooks['BeforePageDisplay'][] = 'insertTitle';
  * @param String $text Output text.
  * @return Boolean Always true to allow other extensions to continue processing.
  */
- 
 function insertTitle($out){
      # Extract meta keywords
 	if (preg_match_all(
@@ -168,6 +175,4 @@ function insertMeta($out, $text){
     }
     return true;
 }
-
-} # End MW env wrapper
 ?>
