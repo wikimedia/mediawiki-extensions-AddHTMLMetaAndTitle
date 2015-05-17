@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dennis Roczek"
+		]
+	},
+	"Add_HTML_Meta_and_Title-desc": "Adds the <seo title="word1,word2,..." metakeywords="word1,word2,..." metadescription="word1,word2,..." /> tag so you can add to the meta keywords and HTML-title of a wiki-page. If you are lazy just use the short version: <seo title="1 , 2" metak="m1 m2,m3" metad="word1, word2" /> .",
+	"seo-empty-attr": "Error: &lt;seo&gt; tag must contain at least one non-empty &quot;title&quot; or &quot;metak(eywords)&quot; or &quot;metad(escription)&quot; attribute."
+}
+
+
