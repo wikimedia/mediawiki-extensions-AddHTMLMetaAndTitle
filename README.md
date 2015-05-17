@@ -17,21 +17,24 @@ require_once "$IP/extensions/Add_HTML_Meta_and_Title/Add_HTML_Meta_and_Title.php
 
 Usage
 =====
+```html
 <seo title="word1,word2" metakeywords="word3,word4" metadescription="word5,word6" google-site-verification="123456789-abfd123456" />
-
+```
 ...or the shorter...
 
+```html
 <seo title="word1,word2" metak="word3,word4" metad="word5,word6" google-site-verification="123456789-abfd123456" />
-
+```
 ...these words are added to the HTML title and meta headers. This makes SEO (search engine optimization) with MediaWiki easier.
 
 For example, the above would become:
 
+```html
 <title>Original title, word1,word2</title>         (the string ", word1,word2,..." is added)
 <meta name="keywords" content="word3,word4" />
 <meta name="description" content="word5,word6" />
 <meta name="google-site-verification" content="123456789-abfd1234562 />
-
+```
 (These are new meta tags - existing meta tags are left untouched.)
 
 
