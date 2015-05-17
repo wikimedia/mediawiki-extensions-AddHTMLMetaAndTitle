@@ -17,7 +17,7 @@ $wgExtensionCredits['parserhook'][] = array(
 						'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'),
     'url'			=> 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
     'description'	=> htmlentities ('Add_HTML_Meta_and_Title-desc'),
-    'version'		=> '0.5',
+    'version'		=> '0.5.2',
 	'license-name'	=> 'MIT'
 );
 
