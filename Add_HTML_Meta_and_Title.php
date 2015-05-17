@@ -10,13 +10,15 @@ if (defined('MEDIAWIKI')) {
 
 # Credits
 $wgExtensionCredits['parserhook'][] = array(
-	'path' => __FILE__,
-    'name' => 'Add_HTML_Meta_and_Title',
-    'author' => 'Vladimir Radulovski - vladradulov&lt;at&gt;gmail.com, based on the work of Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
-    'url' => 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
-    'description' => htmlentities ('Adds the <seo title="word1,word2,..." metakeywords="word1,word2,..." metadescription="word1,word2,..." /> tag so you can add to the meta keywords and HTML-title of a wiki-page. If you are lazy just use the short version: <seo title="1 , 2" metak="m1 m2,m3" metad="word1, word2"  /> .'),
-    'version' => '0.5',
-	'license-name' => 'MIT'
+	'path' 			=> __FILE__,
+    'name'			=> 'Add_HTML_Meta_and_Title',
+    'author'		=> 	array('Vladimir Radulovski - vladradulov&lt;at&gt;gmail.com',
+						'Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
+						'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'),
+    'url'			=> 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
+    'description'	=> htmlentities ('Adds the <seo title="word1,word2,..." metakeywords="word1,word2,..." metadescription="word1,word2,..." /> tag so you can add to the meta keywords and HTML-title of a wiki-page. If you are lazy just use the short version: <seo title="1 , 2" metak="m1 m2,m3" metad="word1, word2"  /> .'),
+    'version'		=> '0.5',
+	'license-name'	=> 'MIT'
 );
 
 # Add Extension Function
