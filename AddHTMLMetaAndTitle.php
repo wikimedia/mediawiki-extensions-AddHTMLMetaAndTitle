@@ -110,10 +110,12 @@ $wgHooks['BeforePageDisplay'][] = 'wfInsertTitle';
 function wfInsertTitle( $out ) {
 	# Extract meta keywords
 	if ( preg_match_all(
-			'/<!-- ADDTITLE ([0-9a-zA-Z\\+\\/]+=*) -->/m',
-			$out->mBodytext,
-			$matches ) === false
-	) return true;
+		'/<!-- ADDTITLE ([0-9a-zA-Z\\+\\/]+=*) -->/m',
+		$out->mBodytext,
+		$matches ) === false
+	) {
+		return true;
+	}
 	$data = $matches[1];
 	# Merge keyword data into OutputPage as meta tags
 	foreach ( $data as $item ) {
@@ -138,10 +140,12 @@ function wfInsertTitle( $out ) {
 function wfInsertMeta( $out, $text ) {
 	# Extract meta keywords
 	if ( preg_match_all(
-			'/<!-- ADDMETAK ([0-9a-zA-Z\\+\\/]+=*) -->/m',
-			$text,
-			$matches ) === false
-	) return true;
+		'/<!-- ADDMETAK ([0-9a-zA-Z\\+\\/]+=*) -->/m',
+		$text,
+		$matches ) === false
+	) {
+		return true;
+	}
 	$data = $matches[1];
 	# Merge keyword data into OutputPage as meta tags
 	foreach ( $data as $item ) {
@@ -157,10 +161,12 @@ function wfInsertMeta( $out, $text ) {
 
 	# Extract meta description
 	if ( preg_match_all(
-			'/<!-- ADDMETAD ([0-9a-zA-Z\\+\\/]+=*) -->/m',
-			$text,
-			$matches ) === false
-	) return true;
+		'/<!-- ADDMETAD ([0-9a-zA-Z\\+\\/]+=*) -->/m',
+		$text,
+		$matches ) === false
+	) {
+		return true;
+	}
 	$data = $matches[1];
 	# Merge description data into OutputPage as meta tags
 	foreach ( $data as $item ) {
@@ -175,10 +181,12 @@ function wfInsertMeta( $out, $text ) {
 	}
 	# Extract google-site-verification
 	if ( preg_match_all(
-			'/<!-- ADDMETAGOOGLESITEVERIFICATION ([0-9a-zA-Z\\+\\/]+=*) -->/m',
-			$text,
-			$matches ) === false
-	) return true;
+		'/<!-- ADDMETAGOOGLESITEVERIFICATION ([0-9a-zA-Z\\+\\/]+=*) -->/m',
+		$text,
+		$matches ) === false
+	) {
+		return true;
+	}
 	$data = $matches[1];
 
 	# Merge google-site-verification data into OutputPage as meta tags
