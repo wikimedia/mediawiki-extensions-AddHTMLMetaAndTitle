@@ -4,6 +4,6 @@
 			"Dennis Roczek"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "Adds the &lt;seo title=\"word1,word2\" metakeywords=\"word1,word2,...\" metadescription=\"word1,word2,...\" google-site-verification=\"googlekey\" \/&gt; tag so you can add to the meta keywords and HTML-title of a wiki-page. If you are lazy just use the short version: &lt;seo title=\"word1, word2,...\" metak=\"word1, word2,...\" metad=\"word1, word2,...\" \/&gt;.",
+	"addhtmlmetaandtitle-desc": "Allows for easier SEO (search engine optimization)",
 	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; tag must contain at least one non-empty \"title\" or \"metak(eywords)\" or \"metad(escription)\" attribute."
 }
