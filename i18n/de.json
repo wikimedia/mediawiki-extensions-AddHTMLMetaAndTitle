@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dennis Roczek"
+			"Dennis Roczek",
+			"Metalhead64"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "Durch den Tag &lt;seo title=\"word1,word2,...\" metakeywords=\"word1,word2,...\" metadescription=\"word1,word2,...\" google-site-verification=\"googlekey\" \/&gt;, koennen Sie die HTML Meta keywords und HTML Meta description Tags von der Wiki Seite bearbeiten. Es existieren auch Kurzformen: &lt;seo title=\"word1, word2,...\" metak=\"word1, word2,...\" metad=\"word1, word2,...\"  \/&gt;",
+	"addhtmlmetaandtitle-desc": "Erlaubt eine einfachere Suchmaschinenoptimierung",
 	"addhtmlmetaandtitle-empty-attr": "Fehler: &lt;seo&gt; Tag muss wenigstens ein nicht leeres Attribut \"title\"  oder \"metak(eywords)\" oder \"metad(escription)\" enthalten."
 }
