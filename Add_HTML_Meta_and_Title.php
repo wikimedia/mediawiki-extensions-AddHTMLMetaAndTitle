@@ -106,16 +106,13 @@ function insertTitle($out){
     # Merge keyword data into OutputPage as meta tags
     foreach ($data as $item) {
         $content = @base64_decode($item);
-		$content = htmlspecialchars($content, ENT_QUOTES);		
-        if ($content){
-			$new_title = $out->mHTMLtitle;
-		
-			//Set page title
-			global $wgSitename;
-			$new_title = "$content - $wgSitename";
-			$out->mHTMLtitleFromPagetitle = true;
-			$out->setHTMLTitle( $new_title );
-		}
+	$content = htmlspecialchars($content, ENT_QUOTES);
+        if ($content) {
+		// Set page title
+		global $wgSitename;
+		$new_title = "$content - $wgSitename";
+		$out->setHTMLTitle( $new_title );
+	}
     }
 	return true;
 }
