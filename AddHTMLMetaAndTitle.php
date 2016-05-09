@@ -16,19 +16,19 @@ EOT;
 	exit( 1 );
 }
 
-$wgExtensionCredits['parserhook'][] = array(
+$wgExtensionCredits['parserhook'][] = [
 	'path' => __FILE__,
 	'name' => 'AddHTMLMetaAndTitle',
-	'author' => array(
+	'author' => [
 		'Vladimir Radulovski - vladradulov&lt;at&gt;gmail.com',
 		'Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
 		'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'
-	),
+	],
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
 	'descriptionmsg' => 'addhtmlmetaandtitle-desc',
 	'version' => '0.7',
 	'license-name' => 'MIT'
-);
+];
 
 # Add Extension Function
 $wgExtensionFunctions[] = 'wfSetupSEOParserHooks';
@@ -56,7 +56,7 @@ function wfParamEncode( $param_text, &$parser, $frame ) {
  * @param Parser $parser Reference to currently running parser (passed by reference).
  * @return String Always empty.
  */
-function wfRenderSEO( $text, $params = array(), $parser, $frame ) {
+function wfRenderSEO( $text, $params = [], $parser, $frame ) {
 	# Short-circuit with error message if content is not specified.
 	$emt = '';
 	if ( ( isset( $params['title'] ) ) ||
