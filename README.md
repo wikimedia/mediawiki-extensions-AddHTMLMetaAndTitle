@@ -1,7 +1,7 @@
 MW-MetaTitle
 ============
 
-An fork of [Add HTML Meta and Title](http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title) extension for MediaWiki.
+An fork of [Add HTML Meta and Title](https://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title) extension for MediaWiki.
 
 Instalation
 =====

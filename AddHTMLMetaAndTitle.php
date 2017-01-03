@@ -1,6 +1,6 @@
 <?php
 /*
-* Extension homepage is at  http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title
+* Extension homepage is at https://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title
 *
  */
 
@@ -24,7 +24,7 @@ $wgExtensionCredits['parserhook'][] = [
 		'Jim Wilson - wilson.jim.r&lt;at&gt;gmail.com',
 		'Dennis Roczek - dennisroczek&lt;at&gt;gmail.com'
 	],
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Add_HTML_Meta_and_Title',
 	'descriptionmsg' => 'addhtmlmetaandtitle-desc',
 	'version' => '0.7',
 	'license-name' => 'MIT'
