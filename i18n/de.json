@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Dennis Roczek",
-			"Metalhead64"
+			"Metalhead64",
+			"Umherirrender"
 		]
 	},
 	"addhtmlmetaandtitle-desc": "Erlaubt eine einfachere Suchmaschinenoptimierung",
-	"addhtmlmetaandtitle-empty-attr": "Fehler: &lt;seo&gt; Tag muss wenigstens ein nicht leeres Attribut \"title\"  oder \"metak(eywords)\" oder \"metad(escription)\" enthalten."
+	"addhtmlmetaandtitle-empty-attr": "Fehler: &lt;seo&gt;-Tag muss wenigstens ein nicht leeres Attribut \"title\" oder \"metak(eywords)\" oder \"metad(escription)\" enthalten."
 }
