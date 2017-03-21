@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Priviet",
-			"Ykhwong"
+			"Ykhwong",
+			"아라"
 		]
 	},
 	"addhtmlmetaandtitle-desc": "간편 SEO(검색 엔진 최적화) 허용",
-	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; 태그는 적어도 하나의 비어있지 않은 \"title\" 또는 \"metak(eywords)\" 또는 \"metad(escription)\" 속성을 포함해야 합니다."
+	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; 태그는 적어도 하나의 비어있지 않은 \"title\" 또는 \"metak(eywords)\" 또는 \"metad(escription)\" 특성을 포함해야 합니다."
 }
