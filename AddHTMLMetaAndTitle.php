@@ -89,8 +89,7 @@ function wfRenderSEO( $text, $params = [], $parser, $frame ) {
 		return $emt; // $encoded_metas_and_title;
 
 	} else {
-		return
-			'<div class="errorbox">' .
+		return '<div class="errorbox">' .
 			wfMessage( 'addhtmlmetaandtitle-empty-attr' )->inContentLanguage()->text() .
 			'</div>';
 	}
