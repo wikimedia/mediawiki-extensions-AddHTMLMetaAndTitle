@@ -42,7 +42,8 @@ class Adder {
 		if ( static::$instance instanceof static ) {
 			return static::$instance;
 		}
-		return static::$instance = new static();
+		static::$instance = new static();
+		return static::$instance;
 	}
 
 	/**
