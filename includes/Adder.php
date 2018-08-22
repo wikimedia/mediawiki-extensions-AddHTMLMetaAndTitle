@@ -87,7 +87,7 @@ class Adder {
 		$permittedParams = array_intersect( array_keys( $params ), $this->getPermittedParams() );
 		if ( count( $permittedParams ) === 0 ) {
 			return '<p class="error">'
-				. wfMessage( 'addhtmlmetaandtitle-empty-attr' )->text()
+				. wfMessage( 'addhtmlmetaandtitle-empty-attr' )->escaped()
 				. '</p>';
 		}
 		$out = '';
