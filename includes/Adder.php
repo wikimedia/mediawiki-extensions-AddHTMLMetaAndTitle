@@ -25,6 +25,8 @@ class Adder {
 		'metakeywords',
 		'metadescription',
 		'google-site-verification',
+		'metaog',
+		'metatwitter'
 	];
 
 	/** @var string[] Mapping of meta name to stored key. */
@@ -33,6 +35,8 @@ class Adder {
 		'keywords' => 'METAK',
 		'description' => 'METAD',
 		'google-site-verification' => 'METAGOOGLESITEVERIFICATION',
+		'metaog' => 'METAOG',
+		'metatwitter' => 'METATWITTER',
 	];
 
 	/**
@@ -101,6 +105,10 @@ class Adder {
 				$commentTitle = $this->storeKeys['description'];
 			} elseif ( $name === 'google-site-verification' ) {
 				$commentTitle = $this->storeKeys['google-site-verification'];
+			} elseif ( $name === 'metaog' ) {
+				$commentTitle = $this->storeKeys['metaog'];
+			} elseif ( $name === 'metatwitter' ) {
+				$commentTitle = $this->storeKeys['metatwitter'];
 			}
 			// If a valid parameter was found, store its value as an HTML comment in the page text.
 			if ( $commentTitle ) {
@@ -133,6 +141,11 @@ class Adder {
 		foreach ( $data as $name => $value ) {
 			$metaNames = array_flip( $this->storeKeys );
 			$metaName = $metaNames[ $name ];
+			if ( $metaName === 'metaog' || $metaName === 'metatwitter') {
+				list( $type, $value ) = explode( '|', $value );
+				$metaName = preg_replace('/meta/', '', $metaName) . ':' . $type;
+				$value = preg_replace('/^http(s)?-/', 'http\1://', $value);
+			}
 			$outputPage->addMeta( $metaName, $value );
 		}
 	}
