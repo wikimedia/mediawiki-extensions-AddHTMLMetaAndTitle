@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Renan"
+		]
+	},
+	"addhtmlmetaandtitle-desc": "Tornar facil li optimisation de machines de sercha (SEO)",
+	"addhtmlmetaandtitle-empty-attr": "Li marcation &lt;seo&gt; deve contener adminim un \"title\" o li atributiones \"metak(eywords)\" o \"metad(escription)\" non-vacui."
+}
