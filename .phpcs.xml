@@ -5,5 +5,4 @@
 	</rule>
 	<file>.</file>
 	<arg name="encoding" value="UTF-8" />
-	<exclude-pattern>vendor</exclude-pattern>
 </ruleset>
