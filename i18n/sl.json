@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"addhtmlmetaandtitle-desc": "Omogoča lažji SEO (optimizacijo za iskalnike)",
+	"addhtmlmetaandtitle-empty-attr": "Oznaka &lt;seo&gt; mora vsebovati vsaj en neprazen atribut »title« ali »metak(eywords)« ali »metad(escription)«."
+}
