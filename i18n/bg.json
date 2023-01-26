@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"StanProg",
 			"Vodnokon4e"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "Улеснява SEO (оптимизация на търсачки)"
+	"addhtmlmetaandtitle-desc": "Улеснява SEO (оптимизация на търсачки)",
+	"addhtmlmetaandtitle-empty-attr": "Тагът &lt;seo&gt трябва да съдържа поне един непразен атрибут \"title\", \"metak(eywords)\" или \"metad(escription)\"."
 }
