@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; tag must contain at least one non-empty 'title' or 'metak(eywords)' or 'metad(escription)' attribute."
+}
