@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Айбикә"
+			"Айбикә",
+			"З. ӘЙЛЕ"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "SEO-ны (эҙләнеү оптимизацияһын) еңелләштерә",
-	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; тегында иң кәмендә бер буш булмаған атрибут «title» (атама), «metak(eywords)» (мета-эҙләнеү һүҙҙәре) йәки «metad(escription)» (мета-һүрәтләү) булырға тейеш."
+	"addhtmlmetaandtitle-desc": "SEO-ны (эҙләүгә ҡулайлаштыра) еңелләштерә",
+	"addhtmlmetaandtitle-empty-attr": "&lt;seo&gt; тамғаһында кәмендә бер буш булмаған атрибут «title» (атама), «metak(eywords)» (мета-эҙләү һүҙҙәре) йәки «metad(escription)» (мета-тасуирлау) булырға тейеш."
 }
