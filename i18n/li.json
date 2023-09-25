@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ooswesthoesbes"
+			"Ooswesthoesbes",
+			"Amire80"
 		]
 	},
 	"addhtmlmetaandtitle-desc": "Maak SEO (zeukmesjienoptimalisaasje) einveljiger",
-	"addhtmlmetaandtitle-empty-attr": "'t &lt;seo&gt; element mót minstes 'n \"title\", \"metak(eywords)\" of  \"metad(escription)\" attribuut bevatte det neet laeg maaag zeen."
+	"addhtmlmetaandtitle-empty-attr": "'t &lt;seo&gt; element mót minstes 'n \"title\", \"metak(eywords)\" of \"metad(escription)\" attribuut bevatte det neet laeg maaag zeen."
 }
