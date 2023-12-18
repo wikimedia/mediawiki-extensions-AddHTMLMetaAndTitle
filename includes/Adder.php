@@ -83,7 +83,7 @@ class Adder {
 	 * @param PPFrame $frame The parser frame.
 	 * @return string
 	 */
-	public function renderSeoElement( $text, $params = [], Parser $parser, PPFrame $frame ) {
+	public function renderSeoElement( $text, array $params, Parser $parser, PPFrame $frame ) {
 		$permittedParams = array_intersect( array_keys( $params ), $this->getPermittedParams() );
 		if ( count( $permittedParams ) === 0 ) {
 			return '<p class="error">'
