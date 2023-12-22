@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Guycn2",
 			"YaronSh"
 		]
 	},
 	"addhtmlmetaandtitle-desc": "קידום האתר במנועי החיפוש (SEO) בדרך קלה יותר",
-	"addhtmlmetaandtitle-empty-attr": "התגית &lt;seo&gt; חייבת להכיל לפחות מאפיין אחד מבין „title” או „metak(eywords)” או „metad(escription)” שאינו ריק."
+	"addhtmlmetaandtitle-empty-attr": "תג &lt;seo&gt; חייב להכיל לפחות תכונה אחת מבין „title” או „metak(eywords)” או „metad(escription)” שאינה ריקה."
 }
