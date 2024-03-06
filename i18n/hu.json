@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Máté"
+			"Máté",
+			"Dj"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "Könnyebb SEO-t (keresőoptimalizálást) tesz lehetővé"
+	"addhtmlmetaandtitle-desc": "Könnyebb SEO-t (keresőoptimalizálást) tesz lehetővé",
+	"addhtmlmetaandtitle-empty-attr": "A &lt;seo&gt; címkének tartalmaznia kell legalább egy nem üres \"title\" vagy \"metak(eywords)\" vagy \"metad(escription)\" attribútumot."
 }
