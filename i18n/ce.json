@@ -4,5 +4,6 @@
 			"Умар"
 		]
 	},
-	"addhtmlmetaandtitle-desc": "Аттайо SEO (лахаран оптимизаци)"
+	"addhtmlmetaandtitle-desc": "Аттайо SEO (лахаран оптимизаци)",
+	"addhtmlmetaandtitle-empty-attr": "&lt;сео&gt; тегехь хила йеза лаххара а цхьаъ йаьсса йоцу атрибут «title», «metak(eywords)» (мета-лехаман дешнаш) йа «metad(escription)» (мета-хаам)."
 }
