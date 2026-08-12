@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"addhtmlmetaandtitle-desc": "يخلّي تحسين الظهور في محركات البحث أسهل",
+	"addhtmlmetaandtitle-empty-attr": "لازم وسم <seo> يكون فيه على الأقل خاصيه وحده ماشي فارغه من بين \"title\" ولا \"metak(eywords)\" ولا \"metad(escription)\"."
+}
