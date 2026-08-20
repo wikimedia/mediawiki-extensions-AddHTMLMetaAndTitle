@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"SussyRed2000"
+		]
+	},
+	"addhtmlmetaandtitle-desc": "Cho phép tối ưu hóa công cụ tìm kiếm (SEO) một cách dễ dàng hơn.",
+	"addhtmlmetaandtitle-empty-attr": "Thẻ &lt;seo&gt; phải chứa ít nhất một thuộc tính \"title\" hoặc \"metak(eywords)\" hoặc \"metad(escription)\"."
+}
