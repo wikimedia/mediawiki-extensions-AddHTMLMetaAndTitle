@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"addhtmlmetaandtitle-desc": "Umožňuje jednoduchšiu optimalizáciu pre vyhľadávače (SEO)",
+	"addhtmlmetaandtitle-empty-attr": "Značka &lt;seo&gt; musí obsahovať aspoň jeden neprázdny atribút „title“, „metak(eywords)“ alebo „metad(escription)“."
+}
